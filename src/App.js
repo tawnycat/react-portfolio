@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Link from "./components/Link";
 import Name from "./components/Name";
 import Container from "./components/Container.js";
@@ -6,7 +7,6 @@ import Header from "./components/Header.js";
 import LinkBox from "./components/LinkBox.js";
 import MainPage from "./components/MainPage.js";
 import Row from "./components/Row.js";
-import Column from "./components/Column.js";
 import './App.css';
 
 class App extends Component {
@@ -14,16 +14,18 @@ class App extends Component {
   constructor(props) {
       super(props)
 
-    this.state = {wordSize: ""}
+    this.state = {wordSize: "", containerClass: "verticalAlign container"}
   }
 
   nameShrink = () => {
-    this.setState({wordSize: "nameSmall"})
+    this.setState({wordSize: "nameSmall", containerClass: "verticalAlign.active container"})
+
+
   }
 
   render() {
     return (
-      <Container>
+      <Container containerClass={this.state.containerClass}>
       <Row>
       <Header>
       <Name className={this.state.wordSize}>

@@ -2,10 +2,10 @@ body {
   background-image: url("/img/dark_embroidery.png");
   background-repeat: repeat;
   display:flex;
-  align-items:center;
   justify-content: center;
 }
 
 html, body {
   height:100%;
 }
+
