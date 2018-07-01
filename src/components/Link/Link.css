@@ -1,10 +1,11 @@
 a {
 	font-family: 'Raleway', sans-serif;
-	font-size: 2rem;
+	font-size: 1.75rem;
 	color: #eaeaea;
 }
 
 a:hover {
 	color: #eaeaea;
 	text-decoration-style: dotted;
+	text-decoration-color: #C62626;
 }

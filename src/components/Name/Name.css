@@ -3,3 +3,17 @@ h1 {
 	color: #eaeaea;
 	font-size: 7rem;
 }
+
+.nameSmall {
+	animation: nameShrink 0.75s 1;
+	animation-fill-mode: forwards;
+}
+
+@keyframes nameShrink {
+  0% {
+    font-size: 7rem;
+  }
+  100% {
+    font-size: 5rem;
+  }
+}
