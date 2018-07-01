@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import Link from "./components/Link";
+import { Link, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import Name from "./components/Name";
 import Container from "./components/Container.js";
 import Header from "./components/Header.js";
@@ -19,12 +19,11 @@ class App extends Component {
 
   nameShrink = () => {
     this.setState({wordSize: "nameSmall", containerClass: "verticalAlign.active container"})
-
-
   }
 
   render() {
     return (
+      <Router>
       <Container containerClass={this.state.containerClass}>
       <Row>
       <Header>
@@ -32,13 +31,18 @@ class App extends Component {
       tawny cataldo
       </Name>
       <LinkBox>
-      <Link link={"#"} linkName={"about"} onClick={this.nameShrink}></Link>
-      <Link link={"#"} linkName={"work"} onClick={this.nameShrink}></Link>
-      <Link link={"#"} linkName={"contact"} onClick={this.nameShrink}></Link>
+      <Link to={"/about"} onClick={this.nameShrink} className="m-3">about</Link>
+      <Link to={"/work"} onClick={this.nameShrink} className="m-3">work</Link>
+      <Link to={"/contact"} onClick={this.nameShrink} className="m-3">contact</Link>
       </LinkBox>
       </Header>
       </Row>
+      <Row>
+      <Route component={MainPage}>
+      </Route>
+      </Row>
       </Container>
+      </Router>
       );
   }
 }

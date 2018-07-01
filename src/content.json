@@ -1,0 +1,14 @@
+[
+	{
+		"id": "about",
+		"data": "this is about"
+	},
+	{
+		"id": "work",
+		"data": "this is work"
+	},
+	{
+		"id": "contact",
+		"data": "this is contact"
+	}
+]
