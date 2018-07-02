@@ -1,12 +1,92 @@
-a {
+body {
+  background-image: url("/img/dark_embroidery.png");
+  background-repeat: repeat;
+  display:flex;
+  justify-content: center;
+}
+
+html, body {
+  height:100%;
+}
+
+.topLink {
 	font-family: 'Raleway', sans-serif;
 	font-size: 1.75rem;
 	color: #eaeaea;
 	opacity: 0.9;
 }
 
-a:hover {
+.topLink:hover, .bigLink:hover {
 	color: #eaeaea;
 	text-decoration-style: dotted;
 	text-decoration-color: #C62626;
+}
+
+h1 {
+	font-family: 'Poiret One', cursive;
+	color: #eaeaea;
+	font-size: 11rem;
+	opacity: 0.9;
+}
+
+.nameSmall {
+	animation: nameShrink 0.75s 1;
+	animation-fill-mode: forwards;
+}
+
+@keyframes nameShrink {
+  0% {
+    font-size: 11rem;
+  }
+  100% {
+    font-size: 5rem;
+  }
+}
+
+p {
+	font-family: 'Raleway', sans-serif;
+	font-size: 1.25rem;
+	color: #eaeaea;
+	opacity: 0.7;
+}
+
+.dev-icons {
+    font-size: 3.75rem;
+    color: #C62626;
+    opacity: 0.9;
+}
+
+.portfolioLinks {
+	font-family: 'Raleway', sans-serif;
+	font-size: 1.25rem;
+	color: #C62626;
+	opacity: 0.9;
+}
+
+.portfolioLinks:hover {
+	color: #C62626;
+	text-decoration-style: dotted;
+	text-decoration-color: #eaeaea;
+	opacity: 0.9;
+}
+
+.projectTitle {
+	font-family: 'Poiret One', cursive;
+	font-size: 1.75rem;
+	color: #eaeaea;
+	opacity: 0.9;
+}
+
+.emailCall {
+	font-family: 'Raleway', sans-serif;
+	font-size: 2rem;
+	color: #eaeaea;
+	opacity: 0.7;
+}
+
+.bigLink {
+	font-family: 'Poiret One', cursive;
+	color: #eaeaea;
+	font-size: 7rem;
+	opacity: 0.9;
 }
