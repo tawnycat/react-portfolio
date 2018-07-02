@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Link, Route } from "react-router-dom";
+import { Link, Route, Switch, withRouter } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 import Name from "./components/Name.js";
 import Container from "./components/Container.js";
 import Header from "./components/Header.js";
@@ -16,7 +17,9 @@ class App extends Component {
   constructor(props) {
       super(props)
 
-    this.state = {wordSize: ""}
+    this.state = {wordSize: "",     
+    show: false,
+    entered: false}
   }
 
   nameShrink = () => {
@@ -24,9 +27,26 @@ class App extends Component {
   }
 
   render() {
+    const TransitionWrapper = withRouter(({ location }) => (
+     <TransitionGroup>
+      <CSSTransition key={location.key}             
+            in={this.state.show}
+            timeout={1000}
+            unmountOnExit
+            >
+      <Switch>
+      <Route path="/about" component={AboutPage} />
+      <Route path="/work" component={WorkPage} />
+      <Route path="/contact" component={ContactPage} />
+      </Switch>
+      </CSSTransition>
+      </TransitionGroup>
+      ))
+
+
     return (
       <Router>
-      <Container containerClass={this.state.containerClass}>
+      <Container>
       <Row>
       <Header>
       <Name className={this.state.wordSize}>
@@ -40,9 +60,7 @@ class App extends Component {
       </Header>
       </Row>
       <Row>
-      <Route path="/about" component={AboutPage} />
-      <Route path="/work" component={WorkPage} />
-      <Route path="/contact" component={ContactPage} />
+      <TransitionWrapper />
       </Row>
       </Container>
       </Router>

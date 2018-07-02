@@ -2,7 +2,7 @@ import React from "react";
 
 const WorkPage = props => (
 	
-<div className="col-md-10 mt-4 p-2">
+<div className="col-md-12 m-4 p-2">
     <div className="row mb-3">
         <div className="col-md-5">
             <img src="/img/feel to reel.png" className="img-fluid" />
